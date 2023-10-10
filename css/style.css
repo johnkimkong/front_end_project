@@ -1,0 +1,291 @@
+h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-navbar {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    background-color: #176B87;
+    margin: 0;
+    padding:  0;
+    font-family: cursive;
+}
+
+.flex-navbar a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+h1 { 
+    
+    font-size: 24px;
+    margin-left: 20px;
+    color: #333;
+}
+
+#intro-section {
+    background: linear-gradient(to bottom, #001C30, #05538D);
+    display: inline-block;
+    width: 100%;
+    height: 50%;
+    /* Set the gradient colour */
+}
+
+#intro-section h1,
+#intro-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+
+.custom-button-class { 
+    background-color: #001C30; 
+    color: white !important;
+    border: 2px solid #FFFFFF !important;
+    /* Set the border colour to white */
+    
+
+}
+
+.intro-content a {
+    font-family: cursive;
+}
+
+.image-container {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.profile_img {
+    
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 30px;
+   
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .profile_img {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .profile_img {
+        width: 150px;
+    }
+}
+
+.intro-content {
+
+    text-align: center;
+    padding: 30px 20px;
+
+}
+
+.d-flex > a:nth-of-type(2) {
+    color: white;
+}
+
+
+.aboutme-intro {
+    color: white;
+}
+
+.aboutme-text {
+    color: black !important;
+}
+
+.aboutme-content p {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    
+}
+
+
+
+.aboutme-content 
+{
+    /* background: linear-gradient(to bottom, #001C30, transparent);  */
+    padding-top: 30px; 
+    padding-bottom: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    text-align: center; 
+    
+}
+
+
+
+#aboutme-section {
+    margin-top: 0px;
+    text-align: center;
+    padding-bottom: 50px;
+    background: linear-gradient(to bottom, #001C30, #05538D);
+    width: 100%;
+    height: 100%;
+    
+}
+
+#aboutme-section h1,
+#aboutme-section p {
+    text-align: center;
+    color: white;
+}
+
+
+.white-box {
+    background-color: #F0F0F0;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 10px rgba(0,0,0,0.1) */
+    
+}
+
+#education-work .aboutme-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#education-work .experience-box 
+{   
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.experience-box {
+    margin-bottom: 80px;
+    padding-bottom: 20px;
+}
+
+#skills {
+    margin-top: 0px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.carousel {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: auto; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    margin-top: 600px
+}
+
+
+
+.carousel-control-prev {
+    left: 0; 
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000000; /* Black color; change as per your requirement */
+}
+
+.carousel-control-next-icon {
+    color: #000000; /* Black color; change as per your requirement */
+}
+
+
+
+
+@media (max-width: 768px) {
+    .carousel-indicators {
+        bottom: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel-indicators {
+        bottom: 20px;
+    }
+}
+
+
+#projects {
+    margin-top: 100px;
+}
+
+#projects h1 {
+    text-align: center;
+}
+
+#contact {
+    margin-top: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+    background: linear-gradient(to bottom, #001C30, #05538D);
+    width: 100%;
+    height: 40%;
+    color: white;
+}
+
+.btn-custom {
+    background-color: white;
+    border-color: white;
+} 
+
+.btn-custom svg {
+    fill: white;
+}
+
+#footer .footer-container {
+    background-color: #176B87;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+p.text-body-secondary {
+    color: white !important;
+}
+
+/* fonts */
+
+/* .aboutme-content h1 {
+    font-family: cursive;
+} */
+
+h1 {
+    font-family: cursive;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+ 
+
+
