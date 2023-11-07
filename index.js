@@ -1,25 +1,22 @@
+// var generateName = require("sillyname");
+
+// import generateName from "sillyname";
+// var sillyName = generateName(); 
+
+// console.log(`My name is ${sillyName}.`); 
+
+// const superheroes = require('superheroes');
+
  
-    // var buttons = document.querySelectorAll("button"); //selects all buttons. 
+// superheroes.all;
+// //=> ['3-D Man', 'A-Bomb', …]
+ 
+// superheroes.random();
+// //=> 'Spider-Ham'
 
-    // for(var i = 0; i < buttons.length; i ++) //for loop to add event listener to add buttons. 
-    // {
-    //     buttons[i].addEventListener("click", function()
-    //     {
-    //         alert("I got clicked");
-    //     });   
-    // }
+// console.log(`I am ${superheroes}.`);
+import superheroes from "superheroes";
 
-    var numberOfDrumButtons = document.querySelectorAll(".drum").length; 
+const name = superheroes.random(); 
 
-    for (var i = 0; i<numberOfDrumButtons; i++) 
-    {
-        document.querySelectorAll(".drum")[i].addEventListener("click", function() 
-        {
-            {   
-                var audio = new Audio('sounds/tom-1.mp3'); 
-                audio.play();
-            }
-        });
-    }
-
-    
+console.log(`I am ${name}!`);
