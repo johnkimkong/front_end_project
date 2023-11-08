@@ -1,17 +1,16 @@
 {
-  "name": "learning-npm",
+  "name": "qr-code-npm",
   "version": "1.0.0",
-  "description": "I\"m learning NPM",
+  "description": "learning to create qr code",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "John Kim",
+  "author": "John",
   "license": "ISC",
   "dependencies": {
-    "sillyname": "^0.1.0",
-    "superhero": "^2.13.7",
-    "superheroes": "^3.0.0"
+    "inquirer": "^9.2.12",
+    "qr-image": "^3.2.0"
   }
 }
