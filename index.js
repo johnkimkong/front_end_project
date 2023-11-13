@@ -1,36 +1,36 @@
-import express from "express";
-const app = express();
-const port = 3000;
+// Use the JS getDay() method so that when the user access the webstiel, they will get the <h1></h1> 
+// tell the user whether its a week or weekend. sun 0,  6:sat. 
 
-// *********************
-// Let’s practice using Postman. Make sure your server is running with nodemon.
-// Then test the 5 different routes below with Postman. Open a separate tab for each request.
-// Check that for each route you’re getting the correct status code returned to you from your server.
-// You should not get any 404s or 500 status codes.
-// *********************
+//steps: 1. 
+
+import express from "express";
+// import ejs from "ejs"; 
+
+const app = express();
+const port = 3000; 
 
 app.get("/", (req, res) => {
-  res.send("<h1>Home Page</h1>");
-});
+    const today = new Date("November 13, 2023 11:32:00");
+    const day = today.getDay();
 
-app.post("/register", (req, res) => {
-  //Do something with the data
-  res.sendStatus(201);
-});
+    let type = "a weekday";
+    let adv = "it's time to work hard";
 
-app.put("/user/angela", (req, res) => {
-  res.sendStatus(200);
-});
+    if(day === 0 || day === 6)
+    {
+        type = "the weekend";
+        adv = "it's time to have some fun!";
+    }
 
-app.patch("/user/angela", (req, res) => {
-  res.sendStatus(200);
-});
-
-app.delete("/user/angela", (req, res) => {
-  //Deleting
-  res.sendStatus(200);
+    res.render("index.ejs", {
+        // dayType: type, 
+        // advice: adv,
+        type, 
+        adv,
+    });
 });
 
 app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
+    console.log(`Server running on port ${port}.`);
 });
+
