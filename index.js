@@ -1,36 +1,30 @@
-// Use the JS getDay() method so that when the user access the webstiel, they will get the <h1></h1> 
-// tell the user whether its a week or weekend. sun 0,  6:sat. 
-
-//steps: 1. 
-
 import express from "express";
-// import ejs from "ejs"; 
 
 const app = express();
-const port = 3000; 
+const port = 3000;
+
+/* Write your code here:
+Step 1: Render the home page "/" index.ejs
+Step 2: Make sure that static files are linked to and the CSS shows up.
+Step 3: Add the routes to handle the render of the about and contact pages.
+  Hint: Check the nav bar in the header.ejs to see the button hrefs
+Step 4: Add the partials to the about and contact pages to show the header and footer on those pages. */
+
+app.use(express.static("public")); 
 
 app.get("/", (req, res) => {
-    const today = new Date("November 13, 2023 11:32:00");
-    const day = today.getDay();
-
-    let type = "a weekday";
-    let adv = "it's time to work hard";
-
-    if(day === 0 || day === 6)
-    {
-        type = "the weekend";
-        adv = "it's time to have some fun!";
-    }
-
-    res.render("index.ejs", {
-        // dayType: type, 
-        // advice: adv,
-        type, 
-        adv,
-    });
+  res.render("index.ejs");
 });
+
+app.get("/about", (req, res) => {
+  res.render("about.ejs");
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact.ejs");
+});
+
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}.`);
+  console.log(`Server running on port ${port}`);
 });
-
