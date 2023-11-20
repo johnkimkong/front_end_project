@@ -1,30 +1,47 @@
 import express from "express";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
 
-/* Write your code here:
-Step 1: Render the home page "/" index.ejs
-Step 2: Make sure that static files are linked to and the CSS shows up.
-Step 3: Add the routes to handle the render of the about and contact pages.
-  Hint: Check the nav bar in the header.ejs to see the button hrefs
-Step 4: Add the partials to the about and contact pages to show the header and footer on those pages. */
-
 app.use(express.static("public")); 
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.render("index.ejs");
-});
+let blogPostData = {}; 
 
-app.get("/about", (req, res) => {
-  res.render("about.ejs");
-});
+  app.get("/", (req, res) => {
+    res.render('index.ejs', {blogPostData}); 
+  });
 
-app.get("/contact", (req, res) => {
-  res.render("contact.ejs");
-});
+  app.get("/write", (req, res) => {
+    res.render('write.ejs'); 
+    res.render('index.ejs', {blogPostData}); 
+  });
 
+  app.post("/submit", (req, res) => {
+    const { postTitle, contentBox } = req.body;
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+    // Store the data in the blogPostData object
+    // blogPostData = { title: postTitle, content: contentBox };
+
+    blogPostData = { id: '1234', title: postTitle, content: contentBox };
+
+    // Send the blog post to the / 
+    res.render('index.ejs', {blogPostData}); 
+    });
+
+  app.get('/delete', (req,res) => {
+    const postId = req.query.id; 
+
+    if(blogPostData.id === postId) {
+      blogPostData = {};
+    }
+    res.redirect('/'); 
+
+  })
+  
+
+  app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+  });
+  
