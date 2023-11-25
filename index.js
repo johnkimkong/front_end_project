@@ -1,47 +1,32 @@
-import express from "express";
-import bodyParser from "body-parser";
+import React from "react";
+import ReactDOM from "react-dom";
 
-const app = express();
-const port = 3000;
+function Card(props) {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <img src={props.img} alt="avatar_img" />
+      <p>{props.tel}</p>
+      <p>{props.email}</p>
+    </div>
+  );
+}
 
-app.use(express.static("public")); 
-app.use(bodyParser.urlencoded({ extended: true }));
-
-let blogPostData = {}; 
-
-  app.get("/", (req, res) => {
-    res.render('index.ejs', {blogPostData}); 
-  });
-
-  app.get("/write", (req, res) => {
-    res.render('write.ejs'); 
-    res.render('index.ejs', {blogPostData}); 
-  });
-
-  app.post("/submit", (req, res) => {
-    const { postTitle, contentBox } = req.body;
-
-    // Store the data in the blogPostData object
-    // blogPostData = { title: postTitle, content: contentBox };
-
-    blogPostData = { id: '1234', title: postTitle, content: contentBox };
-
-    // Send the blog post to the / 
-    res.render('index.ejs', {blogPostData}); 
-    });
-
-  app.get('/delete', (req,res) => {
-    const postId = req.query.id; 
-
-    if(blogPostData.id === postId) {
-      blogPostData = {};
-    }
-    res.redirect('/'); 
-
-  })
-  
-
-  app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-  });
-  
+ReactDOM.render(
+  <div>
+    <h1>My Contacts</h1>
+    <Card
+      name="Beyonce"
+      img="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
+      tel="+123 456 789"
+      email="b@beyonce.com"
+    />
+    <Card
+      name="Jack Bauer"
+      img="https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg"
+      tel="+7387384587"
+      email="jack@nowhere.com"
+    />
+  </div>,
+  document.getElementById("root")
+);
